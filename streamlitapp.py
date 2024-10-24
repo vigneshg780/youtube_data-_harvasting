@@ -89,7 +89,7 @@ elif selected == "Data Zone":
 
                 return all_data
 
-            try:
+          
                 channel_data = pd.DataFrame(get_channel_stats(channel_id))
 
                 if not channel_data.empty:
@@ -241,9 +241,6 @@ elif selected == "Data Zone":
                     if not channel_comment.empty:
                         st.subheader("Comments Data")
                         st.dataframe(channel_comment)
-
-            except Exception as e:
-                st.error(f"An error occurred: {e}")
 
     #___________________________________________________ MIGRATE TAB ___________________________________________________________________________________________
     
