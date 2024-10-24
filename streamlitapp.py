@@ -89,7 +89,7 @@ elif selected == "Data Zone":
 
                 return all_data
 
-          
+            
                 channel_data = pd.DataFrame(get_channel_stats(channel_id))
 
                 if not channel_data.empty:
@@ -282,8 +282,6 @@ elif selected == "Data Zone":
                                         'Channel_Description': sqlalchemy.types.TEXT,
                                         'Playlist_Id': sqlalchemy.types.VARCHAR(length=225)
                                     })
-            else:
-                st.warning("No channel data to migrate.")
 
             if not pl_data.empty:
                 pl_data.to_sql(con=engine, name='playlist', if_exists='append', index=False,
